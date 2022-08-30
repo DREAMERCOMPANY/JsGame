@@ -1,5 +1,6 @@
 
 let ataqueJugador;
+let ataqueEnemigo;
 
 function iniciarJuego(){
     let botonMascotaJugador= document.getElementById('boton-mascota');
@@ -15,17 +16,40 @@ function iniciarJuego(){
 
 function ataqueFuego(){
     ataqueJugador= 'FUEGO'
-    alert(ataqueJugador)
+    ataqueAleatorioEnemigo();
 }
 
 function ataqueAgua(){
     ataqueJugador= 'AGUA'
-    alert(ataqueJugador)
+    ataqueAleatorioEnemigo();
 }
 
 function ataqueTierra(){
     ataqueJugador= 'TIERRA'
-    alert(ataqueJugador)
+    ataqueAleatorioEnemigo();
+}
+function ataqueAleatorioEnemigo(){
+    let ataqueAleatorio=aleatorio(1,3);
+
+    if(ataqueAleatorio==1){
+        ataqueEnemigo='FUEGO'
+    } else if(ataqueAleatorio==2){
+        ataqueEnemigo='AGUA'
+    } else{
+        ataqueEnemigo='TIERRA'
+    }
+
+    crearMensaje();
+
+   
+}
+
+function crearMensaje(){
+    let sectionMensajes= document.getElementById('mensajes')
+    let parrafo= document.createElement('p');
+    parrafo.innerHTML= 'Tu mascota ataco con ' + ataqueJugador + ' la mascota del enemigo ataco con ' + ataqueEnemigo + ' -Pendiente🎉'
+    sectionMensajes.appendChild(parrafo)
+
 }
 
 function seleccionarMascotaJugador(){
@@ -49,12 +73,12 @@ function seleccionarMascotaJugador(){
 
 function seleccionarMascotaEnemigo(){
 
-    let ataqueAleatorio = aleatorio(1,3);
+    let mascotaAleatorio = aleatorio(1,3);
     let spanMascotaEnemigo= document.getElementById('mascota-enemigo')
 
-    if(ataqueAleatorio==1){
+    if(mascotaAleatorio==1){
         spanMascotaEnemigo.innerHTML="Hipodogue"
-    } else if(ataqueAleatorio==2){
+    } else if(mascotaAleatorio==2){
         spanMascotaEnemigo.innerHTML= "Capipepo"
     }else{
         spanMascotaEnemigo.innerHTML="Ratihueya"
@@ -64,7 +88,7 @@ function seleccionarMascotaEnemigo(){
 }
 
 function aleatorio(min,max){
-    Math.floor(Math.random() * (max - min + 1) + min)
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 
