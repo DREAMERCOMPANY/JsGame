@@ -15,6 +15,9 @@ function iniciarJuego(){
     botonAgua.addEventListener('click', ataqueAgua)
     let botonTierra= document.getElementById('boton-tierra')
     botonTierra.addEventListener('click', ataqueTierra);
+
+    let botonReiniciar = document.getElementById('boton-reiniciar');
+    botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
 function ataqueFuego(){
@@ -101,10 +104,22 @@ function crearMensaje(resultado){
 }
 
 function crearMensajeFinal(resultadoFinal){
+    
     let sectionMensajes= document.getElementById('mensajes');
     let parrafo = document.createElement('p')
     parrafo.innerHTML= resultadoFinal
-    sectionMensajes.appendChild(parrafo)
+    sectionMensajes.appendChild(parrafo);
+
+    let botonFuego =document.getElementById('boton-fuego')
+    botonFuego.disabled= true
+    let botonAgua= document.getElementById('boton-agua')
+    botonAgua.disabled= true
+    let botonTierra= document.getElementById('boton-tierra')
+    botonTierra.disabled=true
+
+    
+
+    
 }
 
 function seleccionarMascotaJugador(){
@@ -139,6 +154,12 @@ function seleccionarMascotaEnemigo(){
         spanMascotaEnemigo.innerHTML="Ratihueya"
     }
 
+
+}
+
+function reiniciarJuego(){
+
+    location.reload()
 
 }
 
