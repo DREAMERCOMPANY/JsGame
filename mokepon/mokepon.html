@@ -5,28 +5,45 @@
         <title>Mokepon!</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="./js/mokepon.js"></script>
+        <link rel="stylesheet" href="./styles.css">
         
     </head>
     <body>
-        <h1>Mokepon! 🔥💧⛰️</h1>
+       
 
         <section id="seleccionar-mascota">
-            <h2>Elige a tu mascota: </h2>
 
-            <label for="hipodogue">Hipodogue</label>
-            <input type="radio" name="mascota" id="hipodogue">
+            <h1 class="titulo">Mokepon</h1>
+            <h2 class="subtitulo">Choose your pet: </h2>
 
-            <label for="capipepo">Capipepo</label>
-            <input type="radio" name="mascota" id="capipepo">
+            <div class="tarjetas">
+                <label class="tarjeta-de-mokepon" for="hipodogue">
+                    <p>Hipodogue</p>
+                    <img src="./Assets/hipodogue.png" alt="Hipodogue">
+                </label>
+                <input type="radio" name="mascota" id="hipodogue">
 
-            <label for="ratihueya">Ratihueya</label>
-            <input type="radio" name="mascota" id="ratihueya">
+                <label class="tarjeta-de-mokepon" for="capipepo">
+                    <p>Capipepo</p>
+                    <img src="./Assets/capipepo.png" alt="Capipepo">
+                </label>
+                <input type="radio" name="mascota" id="capipepo">
 
-            <button id="boton-mascota">Seleccionar</button>
+                <label class="tarjeta-de-mokepon" for="ratihueya">
+                    <p>Ratihueya</p>
+                    <img src="./Assets/ratihueya.png" alt="ratihueya">
+                </label>
+                <input type="radio" name="mascota" id="ratihueya">
+            </div>
+
+            
+
+            <button class="button__mascota" id="boton-mascota">!Select!</button>
         </section>
 
 
         <section id="seleccionar-ataque">
+            <h1 class="titulo">Mokepon! 🔥💧⛰️</h1>
             <h2>Elige tu ataque: </h2>
             <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
             <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
