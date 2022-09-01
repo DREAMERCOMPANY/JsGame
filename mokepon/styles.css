@@ -99,3 +99,30 @@ input{
 
 }
 
+#mensajes{
+    width: 280px;
+    background:#11468f;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    letter-spacing: 2px;
+}
+
+#boton-reiniciar{
+    border: 1px solid white;
+    color: #041562;
+    font-weight: bold;
+    font-family: 'Fredoka One';
+    width: 100px;
+    height: 28px;
+    border-radius: 20px;
+    background-color: transparent;
+    font-family: 'Fredoka One';
+    font-size: 15px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
