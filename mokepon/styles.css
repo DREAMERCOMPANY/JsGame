@@ -38,17 +38,20 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     
 }
 
 .tarjeta-de-mokepon img{
     width: 110px;
     cursor: pointer;
+    transition: transform 1s;
     
 }
 
-.tarjeta-de-mokepon img:hover{
+.tarjeta-de-mokepon:hover img{
     transform: scale(1.2);
+    transition: transform 0.5s;
 }
 
 .tarjeta-de-mokepon p{
@@ -74,5 +77,25 @@ body{
 
 input{
     display: none;
+}
+
+#seleccionar-ataque{
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-de-ataque{
+    background-color: #11468f;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 10px;
+    border-color: transparent;
+    width: 100px;
+    color: white;
+    font-family: 'Fredoka One';
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-right: 12px;
+
 }
 
