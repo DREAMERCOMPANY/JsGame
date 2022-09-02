@@ -126,3 +126,14 @@ input{
     letter-spacing: 2px;
     cursor: pointer;
 }
+
+.ataques{
+    display: grid;
+    grid-template-columns: repeat(2,100px);
+    justify-items: center;
+    text-align: center;
+}
+
+@media(max-width:360px){
+
+}
