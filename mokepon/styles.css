@@ -76,7 +76,12 @@ body{
 
 
 input{
-    display: none;
+     display: none; 
+}
+
+input:checked + label{
+    background-color: #5d8bf4;
+    
 }
 
 #seleccionar-ataque{
