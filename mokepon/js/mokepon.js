@@ -7,9 +7,7 @@ const botonTierra= document.getElementById('boton-tierra')
 const botonReiniciar = document.getElementById('boton-reiniciar');
 
 const sectionSeleccionarMascota= document.getElementById('seleccionar-mascota');
-const inputHipodogue= document.getElementById('hipodogue')
-const inputCapipepo= document.getElementById('capipepo');
-const inputRatihueya= document.getElementById('ratihueya');
+
 const spanMascotaJugador= document.getElementById('mascota-jugador');
 
 const spanMascotaEnemigo= document.getElementById('mascota-enemigo')
@@ -20,10 +18,16 @@ const spanVidasEnemigo= document.getElementById('vidas-enemigo');
 const sectionMensajes= document.getElementById('resultado')
 const ataquesDelJugador= document.getElementById('ataques-del-jugador')
 const ataquesDelEnemigo= document.getElementById('ataques-del-enemigo')
+const contenedorTarjetas =document.getElementById('contenedorTarjetas')
 
 let mokepones= [];
 let ataqueJugador;
 let ataqueEnemigo;
+let opcionDeMokepones;
+let inputHipodogue;
+let inputCapipepo;
+let inputRatihueya;
+
 let vidasEnemigo = 3;
 let vidasJugador = 3;
 
@@ -66,12 +70,31 @@ ratihueya.ataques.push(
     
 )
 
+mokepones.push(hipodogue,capipepo,ratihueya);
+
 
 
 
 
 function iniciarJuego(){
     sectionSeleccionarAtaque.style.display ='none';
+
+    mokepones.forEach((mokepon) =>{
+        opcionDeMokepones= `
+        <input type="radio" name="mascota" id=${mokepon.nombre}>
+        <label class="tarjeta-de-mokepon" for=${mokepon.nombre}>
+            <p>${mokepon.nombre}</p>
+            <img src=${mokepon.foto} alt=${mokepon.nombre}>
+        </label>
+        `
+        contenedorTarjetas.innerHTML += opcionDeMokepones;
+
+        inputHipodogue= document.getElementById('Hipodogue')
+        inputCapipepo= document.getElementById('Capipepo');
+        inputRatihueya= document.getElementById('Ratihueya');
+    })
+
+
     sectionReiniciar.style.display='none'
     botonMascotaJugador.addEventListener('click' , seleccionarMascotaJugador);
     botonFuego.addEventListener('click', ataqueFuego)
@@ -172,11 +195,11 @@ function seleccionarMascotaJugador(){
     sectionSeleccionarAtaque.style.display ='flex';
 
     if(inputHipodogue.checked){
-        spanMascotaJugador.innerHTML='Hipodogue'
+        spanMascotaJugador.innerHTML= inputHipodogue.id
     } else if(inputCapipepo.checked){
-        spanMascotaJugador.innerHTML='Capipepo'
+        spanMascotaJugador.innerHTML=inputCapipepo.id
     } else if(inputRatihueya.checked){
-        spanMascotaJugador.innerHTML='Ratihueya'
+        spanMascotaJugador.innerHTML=inputRatihueya.id
     } else{
         alert("Selecciona una mascota")
     }
