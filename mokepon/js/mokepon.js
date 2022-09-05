@@ -27,6 +27,7 @@ let opcionDeMokepones;
 let inputHipodogue;
 let inputCapipepo;
 let inputRatihueya;
+let mascotaJugador;
 
 let vidasEnemigo = 3;
 let vidasJugador = 3;
@@ -196,15 +197,32 @@ function seleccionarMascotaJugador(){
 
     if(inputHipodogue.checked){
         spanMascotaJugador.innerHTML= inputHipodogue.id
+        mascotaJugador=inputHipodogue.id
     } else if(inputCapipepo.checked){
         spanMascotaJugador.innerHTML=inputCapipepo.id
+        mascotaJugador=inputCapipepo.id
     } else if(inputRatihueya.checked){
         spanMascotaJugador.innerHTML=inputRatihueya.id
+        mascotaJugador=inputRatihueya.id
     } else{
         alert("Selecciona una mascota")
     }
     
+    extraerAtaques(mascotaJugador);
     seleccionarMascotaEnemigo();
+}
+
+function extraerAtaques(mascotaJugador){
+    let ataques;
+    for(let i=0; i < mokepones.length ; i++){
+        if(mascotaJugador === mokepones[i].nombre){
+            ataques= mokepones[i].ataques
+
+        }
+    }
+    
+    mostrarAtaques(ataques);
+
 }
 
 function seleccionarMascotaEnemigo(){
