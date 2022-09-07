@@ -95,7 +95,7 @@ input:checked + label{
     box-sizing: border-box;
     padding: 10px;
     border-color: transparent;
-    width: 100px;
+    width: 80px;
     color: white;
     font-family: 'Fredoka One';
     letter-spacing: 2px;
@@ -115,6 +115,10 @@ input:checked + label{
     flex-direction: column;
     color: white;
     letter-spacing: 2px;
+}
+
+#resultado{
+    text-align: center;
 }
 
 #boton-reiniciar{
@@ -142,6 +146,7 @@ input:checked + label{
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
 }
 
 
