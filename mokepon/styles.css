@@ -155,15 +155,36 @@ input:checked + label{
     justify-content: center;
 }
 
+#ver-mapa button{
+    margin-top: 20px;
+    width: 100px;
+    height: 45px;
+    background-color: transparent;
+    border: 1px solid #11468f;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Fredoka One';
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin: 10px 0;
+}
 
 
 
 
-@media(max-width:360px){
 
+@media(max-width:560px){
     .tarjetas , .tarjetas-ataques{
         flex-direction: column;
-    }
+    } 
+}
 
-    
+@media(max-width:300px){
+    #ver-mapa div {
+        display: flex;
+        flex-direction: column;
+        align-items: center ;
+    }
 }
