@@ -1,0 +1,23 @@
+{
+  "name": "programando",
+  "version": "1.0.0",
+  "description": "this is a multiplayer game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DREAMERCOMPANY/JsGame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DREAMERCOMPANY/JsGame/issues"
+  },
+  "homepage": "https://github.com/DREAMERCOMPANY/JsGame#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  }
+}
