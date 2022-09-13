@@ -20,6 +20,10 @@ class Jugador{
         this.x = x
         this.y = y
     }
+
+    asignarAtaques(ataques){
+        this.ataques= ataques
+    }
 }
 
 class Mokepon{
@@ -57,6 +61,18 @@ app.post("/mokepon/:jugadorId/posicion",(req,res)=>{
     const jugadorId = req.params.jugadorId || ""
     const x = req.body.x || 0
     const y = req.body.y || 0
+
+    const jugadorIndex= jugadores.findIndex((jugador) => jugadorId === jugador.id)
+    if(jugadorIndex >=0){
+        jugadores[jugadorIndex].asignarAtaques(ataques)
+    }
+
+    res.send()
+})
+
+app.post("/mokepon/:jugadorId/ataques",(req,res)=>{
+    const jugadorId = req.params.jugadorId || ""
+    const ataques = req.body.ataques || []
 
     const jugadorIndex= jugadores.findIndex((jugador) => jugadorId === jugador.id)
     if(jugadorIndex >=0){
